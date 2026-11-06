@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background-color: #f4f4f9;
+  padding: 0 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 3px solid #e0e0e0;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #d97706;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu a:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+main {
+  margin-top: 50px;
+}
+
+section {
+  margin-bottom: 70px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  border-left: 4px solid #d97706;
+  padding-left: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  flex: 1 1 280px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 25px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  border-color: #d97706;
+}
+
+.card--highlight {
+  border: 2px solid #d97706;
+  position: relative;
+}
+
+.card--highlight::before {
+  content: "Hit cenowy";
+  position: absolute;
+  top: -14px;
+  left: 25px;
+  background-color: #d97706;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.card p {
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.card_price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #d97706;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.price-table th, .price-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  text-align: left;
+}
+
+.price-table th {
+  background-color: #2c3e50;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.price-table .num {
+  text-align: right;
+  font-weight: bold;
+}
+
+.price-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+#kontakt {
+  margin-top: 50px;
+  padding: 30px 0;
+  border-top: 2px dashed #cbd5e1;
+  text-align: center;
+}
+
+#kontakt a {
+  color: #d97706;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .card--highlight::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
