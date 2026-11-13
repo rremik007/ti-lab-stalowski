@@ -33,16 +33,14 @@ body {
   cursor: pointer;
 }
 
-logo {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #d97706;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
 }
 
 .menu {
