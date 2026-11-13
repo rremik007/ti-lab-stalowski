@@ -33,7 +33,11 @@ body {
   cursor: pointer;
 }
 
-.logo {
+logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
   font-size: 1.6rem;
   font-weight: 800;
   color: #d97706;
