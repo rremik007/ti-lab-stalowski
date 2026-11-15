@@ -1,14 +1,9 @@
 <?php
+require 'baza.php';
+
 $firma = 'Szprycha';
 $rok = date('Y');
-
-$cennik = [
-    ['nazwa' => 'Centrowanie koła', 'cena' => 40],
-    ['nazwa' => 'Wymiana dętki / opony', 'cena' => 25],
-    ['nazwa' => 'Odpowietrzanie hamulców', 'cena' => 60],
-    ['nazwa' => 'Regulacja przerzutek', 'cena' => 35],
-    ['nazwa' => 'Smarowanie i czyszczenie napędu', 'cena' => 50],
-];
+$cennik = $pdo->query('SELECT nazwa, cena FROM uslugi ORDER BY cena')->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -23,15 +18,15 @@ $cennik = [
 
     <header class="site-header">
         <a class="logo" href="#">
-    <svg viewBox="0 0 120 64" width="72" height="38" role="img" aria-labelledby="logo-tytul">
-        <title id="logo-tytul">Szprycha</title>
-        <circle cx="28" cy="42" r="18" fill="none" stroke="#d97706" stroke-width="5"/>
-        <circle cx="92" cy="42" r="18" fill="none" stroke="#d97706" stroke-width="5"/>
-        <polyline points="28,42 48,14 80,14 92,42" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-        <polyline points="48,14 60,42 80,14" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span>Szprycha</span>
-</a>
+            <svg viewBox="0 0 120 64" width="72" height="38" role="img" aria-labelledby="logo-tytul">
+                <title id="logo-tytul">Szprycha</title>
+                <circle cx="28" cy="42" r="18" fill="none" stroke="#d97706" stroke-width="5"/>
+                <circle cx="92" cy="42" r="18" fill="none" stroke="#d97706" stroke-width="5"/>
+                <polyline points="28,42 48,14 80,14 92,42" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="48,14 60,42 80,14" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Szprycha</span>
+        </a>
         <button class="menu-toggle" aria-expanded="false" aria-label="Menu">☰ Menu</button>
         <nav class="menu">
             <a href="#uslugi">Usługi</a>
@@ -72,24 +67,24 @@ $cennik = [
                     </tr>
                 </thead>
                 <tbody>
-<?php foreach ($cennik as $usluga): ?>
-    <tr>
-        <td><?= htmlspecialchars($usluga['nazwa']) ?></td>
-        <td class="num"><?= $usluga['cena'] ?> zł</td>
-    </tr>
-<?php endforeach; ?>
-</tbody>
+                    <?php foreach ($cennik as $usluga): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($usluga['nazwa']) ?></td>
+                            <td class="num"><?= (int) $usluga['cena'] ?> zł</td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
             </table>
         </section>
     </main>
 
     <footer id="kontakt">
-    <p>Pracownia Rowerowa Szprycha</p>
-    <p>&copy; <?= $rok ?> <?= $firma ?></p>
-    <p>ul. Rowerowa 12, 85-001 Bydgoszcz</p>
-    <p>Telefon: <a href="tel:+48500100200">500 100 200</a></p>
-    <p>Email: <a href="mailto:serwis@szprycha.pl">serwis@szprycha.pl</a></p>
-</footer>
+        <p>Pracownia Rowerowa Szprycha</p>
+        <p>&copy; <?= $rok ?> <?= $firma ?></p>
+        <p>ul. Rowerowa 12, 85-001 Bydgoszcz</p>
+        <p>Telefon: <a href="tel:+48500100200">500 100 200</a></p>
+        <p>Email: <a href="mailto:serwis@szprycha.pl">serwis@szprycha.pl</a></p>
+    </footer>
 
 </body>
-</html>
+</html>s
