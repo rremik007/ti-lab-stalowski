@@ -25,26 +25,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logowanie — Szprycha</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU90FeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEWIH" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Logowanie do panelu Szprycha</h1>
+<body class="bg-light">
+    <div class="container py-5" style="max-width: 420px;">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="h4 mb-3">Panel Szprycha — Logowanie</h1>
 
-    <?php if ($blad !== ''): ?>
-        <p style="color: red;"><?= htmlspecialchars($blad) ?></p>
-    <?php endif; ?>
+                <?php if ($blad !== ''): ?>
+                    <div class="alert alert-danger"><?= htmlspecialchars($blad) ?></div>
+                <?php endif; ?>
 
-    <form method="post">
-        <p>
-            <label for="login">Login:</label><br>
-            <input id="login" name="login" required>
-        </p>
-        <p>
-            <label for="haslo">Hasło:</label><br>
-            <input id="haslo" name="haslo" type="password" required>
-        </p>
-        <button type="submit">Zaloguj</button>
-    </form>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="login" class="form-label">Login</label>
+                        <input id="login" name="login" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="haslo" class="form-label">Hasło</label>
+                        <input id="haslo" name="haslo" type="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Zaloguj</button>
+                </form>
 
-    <p><a href="index.php">← Powrót na stronę główną</a></p>
+                <div class="mt-3 text-center">
+                    <a href="index.php" class="text-decoration-none">← Powrót na stronę główną</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
